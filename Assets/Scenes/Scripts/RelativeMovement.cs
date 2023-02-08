@@ -56,12 +56,14 @@ public class RelativeMovement : MonoBehaviour {
 		}
 
 		if (hitGround) {
+			
 			if (Input.GetButtonDown("Jump")) {
 				_vertSpeed = jumpSpeed;
 			} else {
 				_vertSpeed = minFall;
 				_animator.SetBool("Jumping", false);
 			}
+			
 		} else {
 			_vertSpeed += gravity * 5 * Time.deltaTime;
 			if (_vertSpeed < terminalVelocity) {
